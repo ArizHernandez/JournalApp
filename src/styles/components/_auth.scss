@@ -1,0 +1,111 @@
+$valid: rgb(59, 196, 77);
+$invalid: rgb(218, 58, 52);
+
+.auth__main {
+  align-items: center;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.auth__box-container {
+  background: #f2f2f2;
+  box-shadow: 5px 5px 20px $dark-gray;
+  width: 90%;
+  padding: 20px;
+}
+
+.auth__title {
+  color: darken($color: $primary, $amount: 20);
+  font-weight: 600;
+}
+
+.auth__input-container{
+  position: relative;
+}
+
+.auth__input {
+  background: rgb(202, 213, 219);
+  border-radius: 5px;
+  border: 3px solid transparent;
+  color: $dark-gray;
+  font-size: 1rem;
+  width: 100%;
+  transition: border .3s ease;
+  &:focus{
+    outline: none;
+    border: 3px solid $primary;
+    box-shadow: 3px 0px 30px rgba(163,163,163,.4);
+  }
+}
+
+.auth__input-invalid{
+  border: 3px solid $invalid;
+  &:focus{
+    border: 3px solid $invalid;
+  }
+}
+
+.auth__input-valid{
+  border: 3px solid $valid;
+  &:focus{
+    border: 3px solid $valid;
+  }
+}
+
+.auth__input-invalid-text{
+  color: $invalid;
+}
+
+.auth__input-valid-text{
+  color: $valid;
+}
+
+.auth__input-icon{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.auth__error-message{
+  font-size: 0.78rem;
+  margin-bottom: 0;
+  color: $invalid;
+}
+
+.auth__social-network{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0px;
+}
+
+.auth__alert-error{
+  background: rgb(212, 43, 43);
+  border-radius: 5px;
+  border: 1px solid rgb(129, 17, 17);
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  p{ 
+    color: rgb(245, 224, 224);
+  }
+}
+
+@media (min-width: 720px){
+  .auth__box-container{
+    border-radius: 5px;
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px){
+  .auth__box-container{
+    width: 25%;
+  }
+}
