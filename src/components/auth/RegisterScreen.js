@@ -12,14 +12,28 @@ import { Input } from './Input';
 export const RegisterScreen = () => {
   const dispatch = useDispatch();
   const {msgError, loading} = useSelector( state => state.ui );
-
-  const [ formValues, handleInputChange ] = useForm({
+  const userValues = {
     name:'',
     email: '',
     password: '',
     password2: ''
+  }
+
+  if(process.env.NODE_ENV === 'test'){
+    userValues.name = 'test';
+    userValues.email = 'test@test.com';
+    userValues.password = '123456';
+    userValues.password2 = '123456';
+  }
+
+
+  const [formValues, handleInputChange] = useForm({
+    name: userValues.name,
+    email: userValues.email,
+    password: userValues.password,
+    password2: userValues.password2
   })
-  const { name, email, password, password2 } = formValues;
+  const {name, email, password, password2} = formValues;
 
   const expresiones = {
     name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
@@ -27,11 +41,11 @@ export const RegisterScreen = () => {
     password: /^.{6,100}$/
   }
 
-  const handleRegister = async(e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
 
     if(isFormValid()) {
-      await dispatch(startRegisterEmailPasswordName(email, password, name));
+      dispatch(startRegisterEmailPasswordName(email, password, name));
     }
   }
 

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el <Input /> Debe de cargar correctamente 1`] = `
+<div
+  className="mb-2"
+>
+  <label
+    className="mb-1"
+  >
+    <small
+      className="
+          false
+          
+        "
+    >
+      Nombre:
+    </small>
+  </label>
+  <div
+    className="auth__input-container"
+  >
+    <input
+      autoComplete="false"
+      className="
+            false 
+            
+            auth__input
+          "
+      name="name"
+      onChange={[MockFunction]}
+      onKeyUp={[Function]}
+      placeholder="Name"
+      required={true}
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

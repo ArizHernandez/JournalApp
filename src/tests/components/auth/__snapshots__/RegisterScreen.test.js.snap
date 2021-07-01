@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el <RegisterScreen /> Debe de cargar correctamente 1`] = `
+Array [
+  <h3
+    className="auth__title txt-center mb-2"
+  >
+    Register
+  </h3>,
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="mb-2"
+    >
+      <label
+        className="mb-1"
+      >
+        <small
+          className="
+          false
+          
+        "
+        >
+          Name:
+        </small>
+      </label>
+      <div
+        className="auth__input-container"
+      >
+        <input
+          autoComplete="off"
+          className="
+            false 
+            
+            auth__input
+          "
+          name="name"
+          onChange={[Function]}
+          onKeyUp={[Function]}
+          placeholder="Name"
+          required={true}
+          type="text"
+          value="test"
+        />
+      </div>
+    </div>
+    <div
+      className="mb-2"
+    >
+      <label
+        className="mb-1"
+      >
+        <small
+          className="
+          false
+          
+        "
+        >
+          Email:
+        </small>
+      </label>
+      <div
+        className="auth__input-container"
+      >
+        <input
+          className="
+            false 
+            
+            auth__input
+          "
+          name="email"
+          onChange={[Function]}
+          onKeyUp={[Function]}
+          placeholder="example@example.com"
+          required={true}
+          type="email"
+          value="test@test.com"
+        />
+      </div>
+    </div>
+    <div
+      className="mb-2"
+    >
+      <label
+        className="mb-1"
+      >
+        <small
+          className="
+          false
+          
+        "
+        >
+          Password:
+        </small>
+      </label>
+      <div
+        className="auth__input-container"
+      >
+        <input
+          className="
+            false 
+            
+            auth__input
+          "
+          name="password"
+          onChange={[Function]}
+          onKeyUp={[Function]}
+          placeholder="******"
+          required={true}
+          type="password"
+          value="123456"
+        />
+      </div>
+    </div>
+    <div
+      className="mb-2"
+    >
+      <label
+        className="mb-1"
+      >
+        <small
+          className="
+          false
+          
+        "
+        >
+          Confirm Password:
+        </small>
+      </label>
+      <div
+        className="auth__input-container"
+      >
+        <input
+          className="
+            false 
+            
+            auth__input
+          "
+          name="password2"
+          onChange={[Function]}
+          onKeyUp={[Function]}
+          placeholder="******"
+          required={true}
+          type="password"
+          value="123456"
+        />
+      </div>
+    </div>
+    <div
+      className="txt-center"
+    >
+      <button
+        className="btn btn-primary btn-block"
+        disabled={false}
+        type="submit"
+      >
+        <span>
+          Sign In 
+        </span>
+      </button>
+    </div>
+  </form>,
+  <div
+    className="mt-1"
+  >
+    <span>
+      Alredy registered? 
+    </span>
+    <a
+      className="link"
+      href="/auth/login"
+      onClick={[Function]}
+    >
+      logIn
+    </a>
+  </div>,
+]
+`;

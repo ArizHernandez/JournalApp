@@ -12,12 +12,21 @@ import { Input } from './Input'
 export const LoginScreen = () => {
   const dispatch = useDispatch();
   const {msgError, loading} = useSelector(state => state.ui);
-
-  const [formValues, handleInputChange] = useForm({
+  const userValues = {
     email: '',
     password: ''
+  };
+
+  if(process.env.NODE_ENV === 'test'){
+    userValues.email = 'test@test.com';
+    userValues.password = '123456'
+  }
+
+  const [formValues, handleInputChange] = useForm({
+    email: userValues.email,
+    password: userValues.password
   });
-  const { email, password } = formValues;
+  const {email, password} = formValues;
 
   const expresiones = {
     email: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
@@ -83,7 +92,7 @@ export const LoginScreen = () => {
             type="submit"
             disabled={loading}
           >
-            <span>Login </span>
+            <span>Login</span>
             {
               (loading)
               && (<i className="fa fa-circle-notch fa-spin"></i>)

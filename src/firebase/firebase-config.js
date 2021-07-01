@@ -3,12 +3,13 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBF9pDkEiXFUm-h8hDDmQyg1VL0oqIKHP0",
-  authDomain: "react-app-curso-ar.firebaseapp.com",
-  projectId: "react-app-curso-ar",
-  storageBucket: "react-app-curso-ar.appspot.com",
-  messagingSenderId: "62715933500",
-  appId: "1:62715933500:web:77fd6325c1eb5676f7e439"
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID,
+  measurementId: process.env.REACT_APP_MEASUREMENTID
 };
 
 // Initialize Firebase

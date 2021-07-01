@@ -1,6 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export const Input = ({required = false, autoComplete ,labelText, placeholder, name, type, value, handleInputChange, expresionRegular, errorMessage}) => {
+export const Input = ({
+  required = false, 
+  autoComplete,
+  labelText, 
+  placeholder, 
+  name, 
+  type, 
+  value, 
+  handleInputChange, 
+  expresionRegular, 
+  errorMessage
+}) => {
   const [isValid, setIsValid] = useState("")
 
   const validate = () => {
@@ -55,4 +67,17 @@ export const Input = ({required = false, autoComplete ,labelText, placeholder, n
       }
     </div>
   )
+}
+
+Input.proptypes = {
+  required:           PropTypes.bool, 
+  autoComplete:       PropTypes.string,
+  labelText:          PropTypes.string.isRequired, 
+  placeholder:        PropTypes.string.isRequired, 
+  name:               PropTypes.string.isRequired, 
+  type:               PropTypes.string.isRequired, 
+  value:              PropTypes.string.isRequired, 
+  handleInputChange:  PropTypes.func.isRequired, 
+  expresionRegular:   PropTypes.string, 
+  errorMessage:       PropTypes.string
 }

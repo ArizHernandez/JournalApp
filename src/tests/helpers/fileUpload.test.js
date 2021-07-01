@@ -31,6 +31,4 @@ describe('Pruebas en fileUpload', () => {
 
     expect(typeof url).toBe("object");
   })
-  
-  
-})
+});

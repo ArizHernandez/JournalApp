@@ -38,11 +38,15 @@ export const startSaveNote = (note) => {
     noteToFirestore.date = new Date().getTime();
     delete noteToFirestore.id;
 
-    await db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore)
-            .then( () => Swal.fire('Updated', 'Your note has been updated!!', 'success'))
-            .catch( (err) => Swal.fire('Upss...', err.message, 'error '));
-
-    dispatch(refreshNote(note.id, note));
+    try {
+      db.doc(`${uid}/journal/notes/${note.id}`).update(noteToFirestore)
+              .then( () => process.env.NODE_ENV !== "test" && Swal.fire('Updated', 'Your note has been updated!!', 'success'))
+              .catch( (err) => process.env.NODE_ENV !== "test" && Swal.fire('Upss...', err.message, 'error '));
+  
+      dispatch(refreshNote(note.id, note));
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 }
 
@@ -50,21 +54,27 @@ export const startUploadFile = (file) => {
   return async(dispatch, getState) => {
     const {active: activeNote} = getState().notes;
 
-    Swal.fire({
-      title: 'Uploading',
-      text: 'Please, wait a minute...',
-      allowOutsideClick: false,
-      showConfirmButton: false,
-      willOpen: () => {
-        Swal.showLoading();
-      }
-    })
+    if(process.env.NODE_ENV !== "test"){
+      Swal.fire({
+        title: 'Uploading',
+        text: 'Please, wait a minute...',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        willOpen: () => {
+          Swal.showLoading();
+        }
+      })
+    }
 
-    const fileUrl = await fileUpload(file);
+    try {
+      const fileUrl = fileUpload(file);
 
-    activeNote.imageUrl = fileUrl;
-    activeNote.date = new Date().getTime();
-    dispatch(startSaveNote(activeNote));
+      activeNote.imageUrl = fileUrl;
+      activeNote.date = new Date().getTime();
+      dispatch(startSaveNote(activeNote));
+    } catch (error) {
+      throw new Error(error);
+    }
     Swal.close();
   }
 }

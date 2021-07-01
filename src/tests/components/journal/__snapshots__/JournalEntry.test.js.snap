@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el <JournalEntry /> Debe de cargar correctamente 1`] = `
+<div
+  className="journal__entry animate__animated animate__fadeInLeft animate__delay-05s"
+  onClick={[Function]}
+>
+  <div
+    className="journal__entry-body-container"
+  >
+    <div
+      className="journal__entry-picture"
+    >
+      <img
+        alt="test title"
+        src="google.com"
+      />
+    </div>
+    <div
+      className="journal__entry-body"
+    >
+      <p
+        className="journal__entry-title"
+      >
+        test title
+      </p>
+      <p
+        className="journal__entry-content"
+      >
+        test body
+      </p>
+    </div>
+  </div>
+  <div
+    className="journal__entry-date-box"
+  >
+    <span>
+      Wednesday
+    </span>
+    <h4>
+      31st
+    </h4>
+  </div>
+</div>
+`;
